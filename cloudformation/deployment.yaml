@@ -135,33 +135,33 @@ Resources:
           !Ref ClassB
       TemplateURL: !Sub 'https://s3.amazonaws.com/${BucketName}/resources/my-city/cloudformation/base/vpc-networking.yaml'
 
-  grafanaService:
-    Type: AWS::CloudFormation::Stack
-    Properties:
-      Parameters:
-        ServiceName:
-          !Ref ServiceName
-        VPCId:
-          !GetAtt [ baseNetworking, Outputs.VPC ]
-        PublicSubnetIDs:
-          !GetAtt [ baseNetworking, Outputs.SubnetsPublic ]
-        PrivateSubnetIDs:
-          !GetAtt [ baseNetworking, Outputs.SubnetsPrivate ]
-        FargateCluster:
-          !GetAtt [ baseFargate, Outputs.FargateCluster ]
-        ContainerImage:
-          !Ref ContainerImage
-        ContainerPort:
-          !Ref ContainerPort
-        ContainerCpu:
-          !Ref ContainerCpu
-        ContainerMemory:
-          !Ref ContainerMemory
-        DesiredCount:
-          !Ref DesiredCount
-        HealthEndpoint:
-          !Ref HealthEndpoint
-      TemplateURL: !Sub 'https://s3.amazonaws.com/${BucketName}/resources/my-city/cloudformation/base/fargate-service.yaml'
+  # grafanaService:
+  #   Type: AWS::CloudFormation::Stack
+  #   Properties:
+  #     Parameters:
+  #       ServiceName:
+  #         !Ref ServiceName
+  #       VPCId:
+  #         !GetAtt [ baseNetworking, Outputs.VPC ]
+  #       PublicSubnetIDs:
+  #         !GetAtt [ baseNetworking, Outputs.SubnetsPublic ]
+  #       PrivateSubnetIDs:
+  #         !GetAtt [ baseNetworking, Outputs.SubnetsPrivate ]
+  #       FargateCluster:
+  #         !GetAtt [ baseFargate, Outputs.FargateCluster ]
+  #       ContainerImage:
+  #         !Ref ContainerImage
+  #       ContainerPort:
+  #         !Ref ContainerPort
+  #       ContainerCpu:
+  #         !Ref ContainerCpu
+  #       ContainerMemory:
+  #         !Ref ContainerMemory
+  #       DesiredCount:
+  #         !Ref DesiredCount
+  #       HealthEndpoint:
+  #         !Ref HealthEndpoint
+  #     TemplateURL: !Sub 'https://s3.amazonaws.com/${BucketName}/resources/my-city/cloudformation/base/fargate-service.yaml'
 
   elasticDomain:
     Type: AWS::CloudFormation::Stack
@@ -171,8 +171,8 @@ Resources:
           !Ref ElasticsearchDomainName
       TemplateURL: !Sub 'https://s3.amazonaws.com/${BucketName}/resources/my-city/cloudformation/base/elastic-domain.yaml'
 
-Outputs:
+# Outputs:
 
-  GrafanaEndpoint:
-    Description: API Endpoint for the Defense Service
-    Value: !GetAtt [ grafanaService, Outputs.EndpointUrl ]
+#   GrafanaEndpoint:
+#     Description: API Endpoint for the Defense Service
+#     Value: !GetAtt [ grafanaService, Outputs.EndpointUrl ]

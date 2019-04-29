@@ -1,0 +1,67 @@
+{
+  "mycity": {
+    "mappings": {
+      "_doc": {
+        "properties": {
+          "address": {
+            "type": "text"
+          },
+          "caseID": {
+            "type": "long"
+          },
+          "category": {
+            "type": "keyword"
+          },
+          "closed": {
+            "type": "date",
+            "format": "MM/dd/YYYY HH:mm:ss||HH:mm"
+          },
+          "location": {
+            "type": "geo_point"
+          },
+          "url": {
+            "type": "text"
+          },
+          "neighborhood": {
+            "type": "text"
+          },
+          "opened": {
+            "type": "date",
+            "format": "MM/dd/YYYY HH:mm:ss||HH:mm"
+          },
+          "police_district": {
+            "type": "keyword"
+          },
+          "request_details": {
+            "type": "text"
+          },
+          "request_type": {
+            "type": "keyword"
+          },
+          "responsible_agency": {
+            "type": "text"
+          },
+          "source": {
+            "type": "keyword"
+          },
+          "status": {
+            "type": "text"
+          },
+          "status_notes": {
+            "type": "text"
+          },
+          "street": {
+            "type": "text"
+          },
+          "supervisor_district": {
+            "type": "integer"
+          },
+          "updated": {
+            "type": "date",
+            "format": "MM/dd/YYYY HH:mm:ss||HH:mm"
+          }
+        }
+      }
+    }
+  }
+}

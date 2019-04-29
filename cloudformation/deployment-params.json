@@ -1,0 +1,16 @@
+[
+    { "ParameterKey":"ProjectName",             "ParameterValue":"MyCity" },
+    { "ParameterKey":"BucketName",              "ParameterValue":"fbhack2019" },
+    { "ParameterKey":"ClassB",                  "ParameterValue":"160" },
+    { "ParameterKey":"ClusterName",             "ParameterValue":"my-city-cluster" },
+
+    { "ParameterKey":"ServiceName",             "ParameterValue":"my-city-grafana" },
+    { "ParameterKey":"ContainerImage",          "ParameterValue":"grafana/grafana" },
+    { "ParameterKey":"ContainerPort",           "ParameterValue":"3000" },
+    { "ParameterKey":"ContainerCpu",            "ParameterValue":"256" },
+    { "ParameterKey":"ContainerMemory",         "ParameterValue":"512" },
+    { "ParameterKey":"DesiredCount",            "ParameterValue":"1" },
+    { "ParameterKey":"HealthEndpoint",          "ParameterValue":"/login" },
+
+    { "ParameterKey":"ElasticsearchDomainName", "ParameterValue":"my-city"}
+]

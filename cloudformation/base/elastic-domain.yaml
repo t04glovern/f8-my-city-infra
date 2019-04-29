@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Deploys a Elasticsearch Domain
+
+Parameters:
+
+  ElasticsearchDomainName:
+    Description: Elasticsearch Domain
+    Type: String
+
+Resources:
+
+  ElasticsearchDomain:
+    Type: AWS::Elasticsearch::Domain
+    Properties:
+      DomainName: !Ref ElasticsearchDomainName
+      ElasticsearchVersion: "6.5"
+      ElasticsearchClusterConfig:
+        InstanceCount: 1
+        InstanceType: t2.medium.elasticsearch
+      EBSOptions:
+        EBSEnabled: true
+        Iops: 0
+        VolumeSize: 10
+        VolumeType: "gp2"
+      SnapshotOptions:
+        AutomatedSnapshotStartHour: 0
+      AccessPolicies:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Principal:
+              AWS: "*"
+            Action:
+              - "es:*"
+            Resource: !Sub "arn:aws:es:${AWS::Region}:${AWS::AccountId}:domain/${ElasticsearchDomainName}/*"
+
+Outputs:
+
+  ElasticsearchDomain:
+    Description: Elasticsearch Domain
+    Value: !Ref ElasticsearchDomain

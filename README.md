@@ -1,5 +1,7 @@
 # Infrastructure
 
+![Architecture](imgs/infrastructure.png)
+
 ## Deploy Stack
 
 Deploy templates for S3 access

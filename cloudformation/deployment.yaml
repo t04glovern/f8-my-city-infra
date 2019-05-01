@@ -117,23 +117,23 @@ Parameters:
 
 Resources:
 
-  baseFargate:
-    Type: AWS::CloudFormation::Stack
-    Properties:
-      Parameters:
-        ProjectName:
-          !Ref ProjectName
-        ClusterName:
-          !Ref ClusterName
-      TemplateURL: !Sub 'https://s3.amazonaws.com/${BucketName}/resources/my-city/cloudformation/base/fargate-cluster.yaml'
+  # baseFargate:
+  #   Type: AWS::CloudFormation::Stack
+  #   Properties:
+  #     Parameters:
+  #       ProjectName:
+  #         !Ref ProjectName
+  #       ClusterName:
+  #         !Ref ClusterName
+  #     TemplateURL: !Sub 'https://s3.amazonaws.com/${BucketName}/resources/my-city/cloudformation/base/fargate-cluster.yaml'
 
-  baseNetworking:
-    Type: AWS::CloudFormation::Stack
-    Properties:
-      Parameters:
-        ClassB:
-          !Ref ClassB
-      TemplateURL: !Sub 'https://s3.amazonaws.com/${BucketName}/resources/my-city/cloudformation/base/vpc-networking.yaml'
+  # baseNetworking:
+  #   Type: AWS::CloudFormation::Stack
+  #   Properties:
+  #     Parameters:
+  #       ClassB:
+  #         !Ref ClassB
+  #     TemplateURL: !Sub 'https://s3.amazonaws.com/${BucketName}/resources/my-city/cloudformation/base/vpc-networking.yaml'
 
   # grafanaService:
   #   Type: AWS::CloudFormation::Stack
